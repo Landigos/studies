@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Variables</h1>
+
+<p>In this example, x, y, and z are undeclared.</p>
+<p>They are automatically declared when first used.</p>
+
+ <input type="text" id="a" placeholder="Give the first number">
+ <input type="text" id="b" placeholder="Give the second number">
+ <button onclick="wholeFunction1()">=</button>
+ <p id="add"></p>
+ 
+ <input type="text" id="c" placeholder="Give the first number">
+ <input type="text" id="d" placeholder="Give the second number">
+ <button onclick="wholeFunction2()">=</button>
+ <p id="sub"></p>
+ 
+ <input type="text" id="e" placeholder="Give the first number">
+ <input type="text" id="f" placeholder="Give the second number">
+ <button onclick="wholeFunction3()">=</button>
+ <p id="div"></p>
+ 
+ <input type="text" id="g" placeholder="Give the first number">
+ <input type="text" id="h" placeholder="Give the second number">
+ <button onclick="wholeFunction4()">=</button>
+ <p id="mul"></p>
+<script>
+
+function wholeFunction1() {
+  let a = document.getElementById("a").value;
+  let b = document.getElementById("b").value;
+w = parseInt(a) + parseInt(b);
+document.getElementById("add").innerHTML =
+a + "+" + b + " is equal to " + w;
+}
+
+function wholeFunction2() {
+  let c = document.getElementById("c").value;
+  let d = document.getElementById("d").value;
+x = c-d;
+document.getElementById("sub").innerHTML =
+c + "-" + d + " is equal to " + x;
+}
+
+function wholeFunction3() {
+  let e = document.getElementById("e").value;
+  let f = document.getElementById("f").value;
+y = e/f;
+document.getElementById("div").innerHTML =
+e + "/" + f + " is equal to " + y;
+}
+
+function wholeFunction4() {
+  let g = document.getElementById("g").value;
+  let h = document.getElementById("h").value;
+z = g*h;
+document.getElementById("mul").innerHTML =
+g + "*" + h + " is equal to " + z;
+}
+</script>
+
+</body>
+</html>
+
+
