@@ -1,0 +1,58 @@
+<html>
+<body>
+
+<form action="/action_page.php">
+<input type="text" value="Give us string 1" placeholder="Hopefully, you will use words" id="givenstring1" name="givenString1"> <br>
+<input type="text" value="Give us string 2" placeholder="You sure will" id="givenstring2" name="givenString2"> <br>
+<input type="text" value="Give us string 3" placeholder="Will you?" id="givenstring3" name="givenString3"> <br>
+<input type="reset" value="Reset">
+<input type="button" onclick="applyRandomStringMethod()" value="Submit">
+</form>
+
+<p id="givenString1"></p>
+<p id="givenString2"></p>
+<p id="givenString3"></p>
+
+<script>
+// Array of string methods and their implementations
+        const stringMethods = [
+            { name: 'toUpperCase', func: (str) => str.toUpperCase() },
+            { name: 'toLowerCase', func: (str) => str.toLowerCase() },
+            { name: 'charAt', func: (str) => `Character at position 2: ${str.charAt(2)}` },
+            { name: 'slice', func: (str) => `Slice from 1 to 4: ${str.slice(1, 4)}` },
+            { name: 'replace', func: (str) => `Replace a with A: ${str.replace('a', 'A')}` },
+            { name: 'split', func: (str) => `Split by space: ${str.split(' ').join(',')}` },
+            { name: 'concat', func: (str) => `Concatenate: ${str.concat(' - added text')}` },
+            { name: 'length', func: (str) => `String length: ${str.length}` },
+            { name: 'repeat', func: (str) => `Repeat 3 times: ${str.repeat(3)}` }
+        ];
+
+        function applyRandomStringMethod() {
+        
+            let given_string1 = document.getElementById("givenstring1").value;
+            let given_string2 = document.getElementById("givenstring2").value;
+            let given_string3 = document.getElementById("givenstring3").value;
+            
+            // Generate a random index
+            const randomIndex = Math.floor(Math.random() * stringMethods.length);
+            
+            // Get the random method
+            const selectedMethod = stringMethods[randomIndex];
+
+            // Apply the selected method
+            const result1 = selectedMethod.func(given_string1);
+            const result2 = selectedMethod.func(given_string2);
+            const result3 = selectedMethod.func(given_string3);
+
+            // Display the method and the result
+            document.getElementById("givenString1").innerHTML = `
+                Selected Method: <strong>${selectedMethod.name}</strong><br>
+                Result for string 1: <strong>${result1}</strong><br>
+                Result for string 2: <strong>${result2}</strong><br>
+                Result for string 3: <strong>${result3}</strong>`;
+        }
+        
+</script>
+
+</body>
+</html> 
